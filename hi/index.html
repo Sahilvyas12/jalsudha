@@ -1177,18 +1177,17 @@
         // forms
         // forms -> WhatsApp: open a chat with the visitor's details already typed in
         const WA_NUMBER='919309318742';
-        // every enquiry is also emailed to the business (FormSubmit), so a lead is kept even if the
-        // visitor never presses Send in WhatsApp
-        const LEAD_ENDPOINT='https://formsubmit.co/ajax/jalsudhaptg@gmail.com';
+        // every enquiry is also emailed to the business (Web3Forms, free), so a lead is kept even if the
+        // visitor never presses Send in WhatsApp. Paste the access key from web3forms.com below.
+        const LEAD_KEY='';
         function saveLead(form, fields){
-            if(form.querySelector('[name="_honey"]').value) return;   // bots fill the hidden field
+            if(!LEAD_KEY || form.querySelector('[name="_honey"]').value) return;   // no key yet / bots fill the hidden field
             try{
-                fetch(LEAD_ENDPOINT, { method:'POST', keepalive:true, headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
-                    body: JSON.stringify(Object.assign({ _subject:'New website enquiry - Jalsudha', _template:'table', _captcha:'false',
+                fetch('https://api.web3forms.com/submit', { method:'POST', keepalive:true, headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+                    body: JSON.stringify(Object.assign({ access_key:LEAD_KEY, subject:'New website enquiry - Jalsudha', from_name:'Jalsudha website',
                         Page: location.href, Language: document.documentElement.lang }, fields)) }).catch(()=>{});
             }catch(e){}
-        }
-        function sendToWhatsApp(lines){
+        }        function sendToWhatsApp(lines){
             const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
             // new tab on desktop; if a popup blocker stops it, go there directly
             const w=window.open(url,'_blank');
