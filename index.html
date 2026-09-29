@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RO Plant in Pratapgarh, Rajasthan | 250-2000 LPH | Jalsudha Enterprises</title>
-    <link rel="canonical" href="https://www.jalsudha.com/">
+    <script>
+        // this site is also reachable on the old GitHub Pages address; send visitors to the real domain
+        if (location.hostname.endsWith('github.io')) location.replace('https://www.jalsudha.com' + location.pathname.replace(/^\/jalsudha/, '') + location.search + location.hash);
+    </script>    <link rel="canonical" href="https://www.jalsudha.com/">
+    <link rel="preload" as="image" href="img/hero-800.webp" imagesrcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" imagesizes="100vw" fetchpriority="high">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -23,10 +27,11 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root{
             --ink:#04212e; --ink-2:#08303f; --ink-3:#0d3d4f;
@@ -312,7 +317,7 @@
         <div class="pl-bubbles" id="bubPL"></div>
         <div class="intro">
             <span class="ring"></span><span class="ring"></span><span class="ring"></span>
-            <div class="intro-plate"><img src="logo.png" alt="Jalsudha Enterprises"></div>
+            <div class="intro-plate"><img src="img/logo.webp" width="300" height="302" alt="Jalsudha Enterprises"></div>
         </div>
         <div class="pl-txt">PURE&nbsp;WATER&nbsp;·&nbsp;PURE&nbsp;LIFE</div>
     </div>
@@ -339,7 +344,7 @@
     <header id="hdr" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
             <a href="#" class="flex items-center shrink-0 py-1 group">
-                <img src="logo.png" alt="Jalsudha Enterprises" class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="img/logo.webp" width="300" height="302" alt="Jalsudha Enterprises" class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
             <nav class="hidden lg:flex items-center gap-7 xl:gap-9 font-semibold text-sm" style="color:var(--text)">
                 <a href="#about" class="navlink hover:text-cyan-700 transition-colors">About</a>
@@ -376,7 +381,7 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero text-white">
-        <img class="hero-photo" src="stock/hero_water.jpg" alt="" aria-hidden="true">
+        <img class="hero-photo" src="img/hero-800.webp" srcset="img/hero-800.webp 800w, img/hero-1400.webp 1400w" sizes="100vw" width="1400" height="1750" fetchpriority="high" decoding="async" alt="" aria-hidden="true">
         <div class="hero-tint"></div>
         <div class="rays"></div>
         <div class="bubbles" id="bubHero"></div>
@@ -523,7 +528,7 @@
             <!-- glass-of-water photo + purity gauge -->
             <div class="reveal d1 relative">
                 <div class="rounded-3xl overflow-hidden shadow-2xl relative aspect-[4/5] sm:aspect-square" style="background:var(--ink)">
-                    <img src="stock/drop.jpg" alt="Pure filtered drinking water poured into a glass" class="absolute inset-0 w-full h-full object-cover opacity-90">
+                    <img src="img/drop.webp" width="800" height="1198" loading="lazy" decoding="async" alt="Pure filtered drinking water from a Jalsudha RO plant poured into a glass" class="absolute inset-0 w-full h-full object-cover opacity-90">
                     <div class="absolute inset-0" style="background:linear-gradient(180deg,transparent 40%,rgba(4,33,46,.85))"></div>
                     <!-- purity gauge card -->
                     <div class="absolute left-5 right-5 bottom-5 glass rounded-2xl p-5 text-white" data-gauge>
@@ -660,7 +665,7 @@
                 <!-- 250 -->
                 <div class="pcard border border-[var(--line)] rounded-3xl p-5 bg-white flex flex-col justify-between group reveal">
                     <div>
-                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="250 lph.jpeg" alt="250 LPH RO Plant" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="img/ro-250.webp" width="700" height="795" loading="lazy" decoding="async" alt="250 LPH commercial RO plant with 1 membrane, Jalsudha Enterprises" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
                         <span class="chip inline-block text-[var(--aqua-deep)] bg-cyan-50 px-2.5 py-1 rounded-md uppercase font-bold">1 Membrane</span>
                         <h3 class="font-display text-lg font-bold text-slate-900 mt-2 group-hover:text-cyan-700 transition-colors">250 LPH RO Plant</h3>
                         <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">FRP vessel, 60–65% recovery. Optional auto control panel. Ideal for clinics &amp; schools.</p>
@@ -679,7 +684,7 @@
                 <div class="pcard border border-[var(--line)] rounded-3xl p-5 bg-white flex flex-col justify-between group relative reveal d1">
                     <div class="absolute -top-3 right-6 text-white text-[10px] font-bold px-3 py-0.5 rounded-full uppercase shadow-md" style="background:var(--aqua-deep)">Popular</div>
                     <div>
-                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="500lph.jpg" alt="500 LPH RO Plant" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="img/ro-500.webp" width="700" height="525" loading="lazy" decoding="async" alt="500 LPH commercial RO plant with 2 membranes" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
                         <span class="chip inline-block text-[var(--aqua-deep)] bg-cyan-50 px-2.5 py-1 rounded-md uppercase font-bold">2 Membranes</span>
                         <h3 class="font-display text-lg font-bold text-slate-900 mt-2 group-hover:text-cyan-700 transition-colors">500 LPH RO Plant</h3>
                         <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">2 Dove/Duken membranes, 60–65% recovery, Vectus piping. Optional auto-flush &amp; level sensors.</p>
@@ -697,7 +702,7 @@
                 <!-- 1000 -->
                 <div class="pcard border border-[var(--line)] rounded-3xl p-5 bg-white flex flex-col justify-between group reveal d2">
                     <div>
-                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="1000lph(2).jpeg" alt="1000 LPH RO Plant" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="img/ro-1000.webp" width="499" height="375" loading="lazy" decoding="async" alt="1000 LPH industrial RO plant with 4 membranes" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
                         <span class="chip inline-block text-[var(--aqua-deep)] bg-cyan-50 px-2.5 py-1 rounded-md uppercase font-bold">250L×4 / 500L×2</span>
                         <h3 class="font-display text-lg font-bold text-slate-900 mt-2 group-hover:text-cyan-700 transition-colors">1000 LPH RO Plant</h3>
                         <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Heavy-duty commercial plant, 4 membranes, Vectus/Astral piping. Semi- or fully-automatic PLC.</p>
@@ -715,7 +720,7 @@
                 <!-- 2000 -->
                 <div class="pcard border border-[var(--line)] rounded-3xl p-5 bg-white flex flex-col justify-between group reveal d3">
                     <div>
-                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="2000lph.jpeg" alt="2000 LPH RO Plant" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
+                        <div class="w-full h-48 bg-[var(--paper)] rounded-2xl flex items-center justify-center overflow-hidden mb-4 p-2"><img src="img/ro-2000.webp" width="500" height="375" loading="lazy" decoding="async" alt="2000 LPH high-capacity industrial RO plant with 8 membranes" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"></div>
                         <span class="chip inline-block text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md uppercase font-bold">250L×8 / 500L×4</span>
                         <h3 class="font-display text-lg font-bold text-slate-900 mt-2 group-hover:text-emerald-700 transition-colors">2000 LPH RO Plant</h3>
                         <p class="text-slate-500 text-xs mt-1.5 leading-relaxed">Max-performance plant, 8 Dove/Duken membranes. Optional PLC with auto backwash &amp; dosing.</p>
@@ -746,15 +751,15 @@
                         <h4 class="font-bold text-sm text-white">Industrial Water Chiller</h4><p class="text-xs text-cyan-100/60 mt-1">Rapid cooling for purified drinking water.</p>
                     </div>
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
-                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="dozing pump(2).jpg" alt="Dosing Pump" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
+                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="img/dosing-pump.webp" width="400" height="399" loading="lazy" decoding="async" alt="Chemical dosing pump for RO plant" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
                         <h4 class="font-bold text-sm text-white">Dosing Pump</h4><p class="text-xs text-cyan-100/60 mt-1">Precision chemical dosing.</p>
                     </div>
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
-                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="chemicl.jpg" alt="RO Antiscalant Chemicals" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
+                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="img/antiscalant.webp" width="400" height="478" loading="lazy" decoding="async" alt="RO antiscalant chemical can" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
                         <h4 class="font-bold text-sm text-white">RO Antiscalant Chemicals</h4><p class="text-xs text-cyan-100/60 mt-1">Prevents membrane fouling &amp; scaling.</p>
                     </div>
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
-                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="Membranes.jpeg" alt="RO Membranes" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
+                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="img/membranes.webp" width="400" height="400" loading="lazy" decoding="async" alt="RO membrane for 250 to 2000 LPH plants" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
                         <h4 class="font-bold text-sm text-white">Quality Membranes</h4><p class="text-xs text-cyan-100/60 mt-1">High-rejection, 250–2000 LPH.</p>
                     </div>
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
@@ -762,7 +767,7 @@
                         <h4 class="font-bold text-sm text-white">Water ATM Machine</h4><p class="text-xs text-cyan-100/60 mt-1">Coin &amp; RFID card-operated vending.</p>
                     </div>
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
-                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="Keyfob.jpeg" alt="ATM Smart Cards & Keyfobs" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
+                        <div class="w-full h-32 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2" style="background:rgba(0,0,0,.25)"><img src="img/keyfob.webp" width="400" height="220" loading="lazy" decoding="async" alt="RFID keyfob for Water ATM machine" class="h-full object-contain group-hover:scale-110 transition-transform"></div>
                         <h4 class="font-bold text-sm text-white">ATM Cards &amp; Keyfobs</h4><p class="text-xs text-cyan-100/60 mt-1">Rechargeable RFID smart cards.</p>
                     </div>
                 </div>
@@ -842,7 +847,7 @@
             <div class="grid lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
                 <div class="lg:col-span-5 space-y-6 reveal">
                     <div class="flex items-center gap-3">
-                        <img src="logo.png" alt="Jalsudha Logo" class="h-10 w-auto bg-white p-1 rounded-lg">
+                        <img src="img/logo.webp" width="300" height="302" loading="lazy" decoding="async" alt="Jalsudha Enterprises logo" class="h-10 w-auto bg-white p-1 rounded-lg">
                         <span class="font-display text-2xl font-extrabold text-white tracking-tight">JALSUDHA ENTERPRISES</span>
                     </div>
                     <p class="text-sm text-cyan-100/70 leading-relaxed">Your trusted partner in water-filtration plants, industrial RO systems, chillers, Water ATMs and repair solutions.</p>
@@ -1354,7 +1359,16 @@
             for(const sel in HI_IN){ if(node.parentElement.closest(sel) && HI_IN[sel][key]) return HI_IN[sel][key]; }
             return HI[key];
         }
+        // Devanagari font is only downloaded the first time someone switches to Hindi
+        let hiFontLoaded = false;
+        function loadHindiFont(){
+            if(hiFontLoaded) return; hiFontLoaded = true;
+            const l = document.createElement('link'); l.rel = 'stylesheet';
+            l.href = 'https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap';
+            document.head.appendChild(l);
+        }
         function apply(){
+            if(lang === 'hi') loadHindiFont();
             textNodes().forEach(n => {
                 if(n.__en === undefined) n.__en = n.textContent;
                 const raw = n.__en, key = raw.replace(/\s+/g, ' ').trim();
