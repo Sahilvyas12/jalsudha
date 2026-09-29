@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jalsudha Enterprises | Pure Water, Pure Life</title>
+    <title>RO Plant in Pratapgarh, Rajasthan | 250-2000 LPH | Jalsudha Enterprises</title>
+    <link rel="canonical" href="https://sahilvyas12.github.io/jalsudha/">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#04212e">
-    <meta name="description" content="Industrial & commercial RO plants from 250 to 2000 LPH, water chillers, Water ATMs, spares and 24/7 RO repair. Pratapgarh, Rajasthan. Call +91 8619109683.">
+    <meta name="description" content="Commercial & industrial RO plants (250-2000 LPH), water chillers, Water ATMs, RO repair and AMC in Pratapgarh, Rajasthan. Free TDS test. Call +91 8619109683.">
+    <meta name="robots" content="index, follow">
     <!-- link preview on WhatsApp / Facebook / Google -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Jalsudha Enterprises">
@@ -21,24 +23,10 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        display: ['Sora', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                }
-            }
-        }
-    </script>
     <style>
         :root{
             --ink:#04212e; --ink-2:#08303f; --ink-3:#0d3d4f;
@@ -237,6 +225,18 @@
         .cur-drop::after{ content:''; position:absolute; left:6px; top:5px; width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,.85); }
         .cur-fx{ border-radius:50%; }
 
+        /* ---------- FAQ accordion ---------- */
+        .faq{ background:#fff; border:1px solid var(--line); border-radius:16px; transition:border-color .2s, box-shadow .2s; }
+        .faq[open]{ border-color:var(--aqua); box-shadow:0 14px 30px -22px rgba(6,90,120,.45); }
+        .faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px;
+            padding:16px 18px; min-height:56px; font-weight:700; font-size:15px; color:var(--text); }
+        .faq summary::-webkit-details-marker{ display:none; }
+        .faq summary::after{ content:'+'; flex:none; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+            background:var(--paper); color:var(--aqua-deep); font-size:20px; font-weight:600; transition:transform .25s; }
+        .faq[open] summary::after{ transform:rotate(45deg); }
+        .faq summary:focus-visible{ outline:3px solid var(--aqua); outline-offset:2px; border-radius:16px; }
+        .faq p{ padding:0 18px 18px; color:var(--muted); font-size:14px; line-height:1.7; }
+
         /* ---------- Office map ---------- */
         .map-box{ height:220px; background:var(--ink-2); }
         .map-box iframe{ display:block; width:100%; height:100%; border:0; }
@@ -251,7 +251,7 @@
         html[lang="hi"] .chip, html[lang="hi"] .spec-strip, html[lang="hi"] .pl-txt, html[lang="hi"] input,
         html[lang="hi"] select, html[lang="hi"] textarea, html[lang="hi"] button{ font-family:'Mukta','Plus Jakarta Sans',sans-serif; }
         html[lang="hi"] *{ letter-spacing:0 !important; }
-        html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3{ line-height:1.3 !important; }
+        html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3, html[lang="hi"] .headline{ line-height:1.3 !important; }
         html[lang="hi"] p, html[lang="hi"] li{ line-height:1.75; }
 
         /* ---------- Mobile (most customers visit on a phone) ----------
@@ -300,6 +300,9 @@
             .beaker .water{ height:var(--fill,62%) !important; }
         }
     </style>
+    <!-- Tailwind styles, pre-built by build_site.py (much faster than building them in the browser).
+         Loaded last, where the old CDN put its styles, so the page looks exactly the same. -->
+    <link rel="stylesheet" href="tw.css">
 </head>
 <body class="antialiased">
 <script>document.body.parentElement.classList.remove('no-js');</script>
@@ -380,16 +383,17 @@
         <canvas id="ripple"></canvas>
         <div class="hero-inner max-w-7xl mx-auto px-4 sm:px-8 pt-12 pb-20 lg:pt-20 lg:pb-28 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-7">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-semibold mb-7 eyebrow" style="color:var(--mint)">
-                    <i class="fa-solid fa-certificate" style="color:var(--amber)"></i> EST. 2019 · Pratapgarh, Rajasthan
-                </div>
-                <h1 class="headline font-display font-extrabold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.1rem]">
+                <!-- the page's H1 carries what Google should rank for; the big slogan below is styled text -->
+                <h1 class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-semibold mb-7 eyebrow" style="color:var(--mint)">
+                    <i class="fa-solid fa-certificate" style="color:var(--amber)"></i> RO Plants &amp; RO Service in Pratapgarh, Rajasthan · Since 2019
+                </h1>
+                <p class="headline font-display font-extrabold tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.1rem]">
                     <span style="animation-delay:.05s">Engineered</span>
                     <span style="animation-delay:.18s">purity,</span><br>
                     <span style="animation-delay:.32s;color:var(--mint)">drop</span>
                     <span style="animation-delay:.44s;color:var(--mint)">by</span>
                     <span style="animation-delay:.56s;color:var(--mint)">drop.</span>
-                </h1>
+                </p>
                 <p class="mt-5 text-cyan-50/90 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
                     Industrial &amp; commercial Reverse-Osmosis plants from <strong class="font-semibold text-white">250 to 2000 LPH</strong> - plus water chillers, Water ATMs, dosing systems and genuine spares, installed and serviced across Rajasthan &amp; India.
                 </p>
@@ -788,6 +792,46 @@
         </div>
     </section>
 
+    <!-- ===== FAQ (answers common searches; also marked up for Google below) ===== -->
+    <section id="faq" class="pb-16 sm:pb-24 bg-[var(--paper)]">
+        <div class="max-w-3xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-8 reveal">
+                <span class="eyebrow text-[11px] font-bold text-[var(--aqua-deep)]">Questions</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Frequently asked questions</h2>
+            </div>
+            <div class="faq-list space-y-3 reveal d1">
+                <details class="faq">
+                    <summary>Which RO plant capacity do I need?</summary>
+                    <p>It depends on how much water you use each day. A 250 LPH plant suits a small facility or clinic (1,000 to 2,500 litres a day), 500 LPH suits a school, hotel or cafe (3,000 to 5,000 litres), 1000 LPH suits a medium factory or hospital (6,000 to 10,000 litres), and 2000 LPH suits a large plant or bottling unit (15,000 litres or more). Use the calculator above, or ask us for a free TDS test and recommendation.</p>
+                </details>
+                <details class="faq">
+                    <summary>Do you test the water before installing an RO plant?</summary>
+                    <p>Yes. We do a free on-site TDS test in Pratapgarh before choosing the membranes, because borewell water in Rajasthan often has high TDS and the right membrane depends on your water.</p>
+                </details>
+                <details class="faq">
+                    <summary>Which membranes and parts do you use?</summary>
+                    <p>Our plants use Dove/Duken RO membranes, FRP pressure vessels and Vectus or Astral piping, with 60 to 65% water recovery. Automatic PLC control, auto-flush and level sensors are available as options.</p>
+                </details>
+                <details class="faq">
+                    <summary>Do you provide RO plant repair and AMC?</summary>
+                    <p>Yes. We repair and service RO plants, change filters and membranes, do chemical cleaning, and offer Annual Maintenance Contracts (AMC). Clients in Pratapgarh and nearby industrial areas get same-day technician visits.</p>
+                </details>
+                <details class="faq">
+                    <summary>Which areas do you serve?</summary>
+                    <p>We are based at Brahmno ki Pole, Gopal Ganj, Pratapgarh (Rajasthan) and install and service plants across Rajasthan, Madhya Pradesh and the rest of India.</p>
+                </details>
+                <details class="faq">
+                    <summary>Do you sell water chillers and Water ATM machines?</summary>
+                    <p>Yes. We supply industrial water chillers, coin and RFID-card Water ATM machines, rechargeable ATM cards and keyfobs, dosing pumps, RO antiscalant chemicals and spare membranes.</p>
+                </details>
+                <details class="faq">
+                    <summary>How do I get a price?</summary>
+                    <p>Send us your requirement on WhatsApp at +91 9309318742 or call +91 8619109683. You can also fill the price quote form at the top of this page.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- wave into contact -->
     <div class="wave-d" style="background:var(--paper)"><svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,35 C240,70 480,0 720,35 C960,70 1200,0 1440,35 L1440,70 L0,70 Z" fill="#04212e"/></svg></div>
 
@@ -1073,6 +1117,30 @@
     }
     </script>
 
+    <!-- FAQ for Google (must match the visible FAQ section) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which RO plant capacity do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on how much water you use each day. A 250 LPH plant suits a small facility or clinic (1,000 to 2,500 litres a day), 500 LPH suits a school, hotel or cafe (3,000 to 5,000 litres), 1000 LPH suits a medium factory or hospital (6,000 to 10,000 litres), and 2000 LPH suits a large plant or bottling unit (15,000 litres or more). Use the calculator above, or ask us for a free TDS test and recommendation." } },
+        { "@type": "Question", "name": "Do you test the water before installing an RO plant?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We do a free on-site TDS test in Pratapgarh before choosing the membranes, because borewell water in Rajasthan often has high TDS and the right membrane depends on your water." } },
+        { "@type": "Question", "name": "Which membranes and parts do you use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Our plants use Dove/Duken RO membranes, FRP pressure vessels and Vectus or Astral piping, with 60 to 65% water recovery. Automatic PLC control, auto-flush and level sensors are available as options." } },
+        { "@type": "Question", "name": "Do you provide RO plant repair and AMC?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We repair and service RO plants, change filters and membranes, do chemical cleaning, and offer Annual Maintenance Contracts (AMC). Clients in Pratapgarh and nearby industrial areas get same-day technician visits." } },
+        { "@type": "Question", "name": "Which areas do you serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We are based at Brahmno ki Pole, Gopal Ganj, Pratapgarh (Rajasthan) and install and service plants across Rajasthan, Madhya Pradesh and the rest of India." } },
+        { "@type": "Question", "name": "Do you sell water chillers and Water ATM machines?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. We supply industrial water chillers, coin and RFID-card Water ATM machines, rechargeable ATM cards and keyfobs, dosing pumps, RO antiscalant chemicals and spare membranes." } },
+        { "@type": "Question", "name": "How do I get a price?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Send us your requirement on WhatsApp at +91 9309318742 or call +91 8619109683. You can also fill the price quote form at the top of this page." } }
+      ]
+    }
+    </script>
+
     <!-- ===== English / Hindi switch =====
          Swaps visible text using the table below; English stays in the HTML as the source.
          Technical terms buyers already use (RO, LPH, TDS, PLC, AMC, ATM, brand names) stay as they are. -->
@@ -1091,7 +1159,23 @@
             "WhatsApp": "व्हाट्सऐप",
             "Get Free Quote": "फ्री कोटेशन लें",
             "Call now": "अभी कॉल करें",
-            "EST. 2019 · Pratapgarh, Rajasthan": "स्थापना 2019 · प्रतापगढ़, राजस्थान",
+            "RO Plants & RO Service in Pratapgarh, Rajasthan · Since 2019": "प्रतापगढ़, राजस्थान में आरओ प्लांट और आरओ सर्विस · 2019 से",
+            "Questions": "सवाल-जवाब",
+            "Frequently asked questions": "अक्सर पूछे जाने वाले सवाल",
+            "Which RO plant capacity do I need?": "मुझे कितनी क्षमता का आरओ प्लांट चाहिए?",
+            "It depends on how much water you use each day. A 250 LPH plant suits a small facility or clinic (1,000 to 2,500 litres a day), 500 LPH suits a school, hotel or cafe (3,000 to 5,000 litres), 1000 LPH suits a medium factory or hospital (6,000 to 10,000 litres), and 2000 LPH suits a large plant or bottling unit (15,000 litres or more). Use the calculator above, or ask us for a free TDS test and recommendation.": "यह इस पर निर्भर करता है कि आप रोज़ कितना पानी इस्तेमाल करते हैं। 250 LPH प्लांट छोटी जगह या क्लिनिक (1,000 से 2,500 लीटर रोज़) के लिए, 500 LPH स्कूल, होटल या कैफ़े (3,000 से 5,000 लीटर) के लिए, 1000 LPH मध्यम फ़ैक्ट्री या अस्पताल (6,000 से 10,000 लीटर) के लिए और 2000 LPH बड़े प्लांट या बॉटलिंग यूनिट (15,000 लीटर या ज़्यादा) के लिए सही है। ऊपर दिया कैलकुलेटर इस्तेमाल करें, या मुफ़्त TDS जाँच और सलाह के लिए हमसे संपर्क करें।",
+            "Do you test the water before installing an RO plant?": "क्या आप आरओ प्लांट लगाने से पहले पानी की जाँच करते हैं?",
+            "Yes. We do a free on-site TDS test in Pratapgarh before choosing the membranes, because borewell water in Rajasthan often has high TDS and the right membrane depends on your water.": "हाँ। मेम्ब्रेन चुनने से पहले हम प्रतापगढ़ में साइट पर मुफ़्त TDS जाँच करते हैं, क्योंकि राजस्थान के बोरवेल पानी में अक्सर TDS ज़्यादा होता है और सही मेम्ब्रेन आपके पानी पर निर्भर करती है।",
+            "Which membranes and parts do you use?": "आप कौन-सी मेम्ब्रेन और पार्ट्स इस्तेमाल करते हैं?",
+            "Our plants use Dove/Duken RO membranes, FRP pressure vessels and Vectus or Astral piping, with 60 to 65% water recovery. Automatic PLC control, auto-flush and level sensors are available as options.": "हमारे प्लांट में Dove/Duken आरओ मेम्ब्रेन, FRP प्रेशर वेसल और Vectus या Astral पाइपिंग लगती है, और 60 से 65% पानी की रिकवरी मिलती है। ऑटोमैटिक PLC कंट्रोल, ऑटो-फ़्लश और लेवल सेंसर विकल्प के रूप में उपलब्ध हैं।",
+            "Do you provide RO plant repair and AMC?": "क्या आप आरओ प्लांट की रिपेयर और AMC देते हैं?",
+            "Yes. We repair and service RO plants, change filters and membranes, do chemical cleaning, and offer Annual Maintenance Contracts (AMC). Clients in Pratapgarh and nearby industrial areas get same-day technician visits.": "हाँ। हम आरओ प्लांट की रिपेयर और सर्विस करते हैं, फ़िल्टर और मेम्ब्रेन बदलते हैं, केमिकल क्लीनिंग करते हैं और सालाना मेंटेनेंस कॉन्ट्रैक्ट (AMC) देते हैं। प्रतापगढ़ और आसपास के औद्योगिक क्षेत्रों में उसी दिन टेक्नीशियन आता है।",
+            "Which areas do you serve?": "आप किन इलाकों में सर्विस देते हैं?",
+            "We are based at Brahmno ki Pole, Gopal Ganj, Pratapgarh (Rajasthan) and install and service plants across Rajasthan, Madhya Pradesh and the rest of India.": "हमारा ऑफ़िस ब्राह्मणों की पोल, गोपाल गंज, प्रतापगढ़ (राजस्थान) में है। हम पूरे राजस्थान, मध्य प्रदेश और भारत में प्लांट लगाते और सर्विस करते हैं।",
+            "Do you sell water chillers and Water ATM machines?": "क्या आप वाटर चिलर और वाटर ATM मशीन भी बेचते हैं?",
+            "Yes. We supply industrial water chillers, coin and RFID-card Water ATM machines, rechargeable ATM cards and keyfobs, dosing pumps, RO antiscalant chemicals and spare membranes.": "हाँ। हम इंडस्ट्रियल वाटर चिलर, सिक्के और RFID कार्ड वाली वाटर ATM मशीन, रिचार्ज होने वाले ATM कार्ड और कीफ़ोब, डोज़िंग पंप, आरओ एंटीस्केलेंट केमिकल और स्पेयर मेम्ब्रेन देते हैं।",
+            "How do I get a price?": "कीमत कैसे पता करें?",
+            "Send us your requirement on WhatsApp at +91 9309318742 or call +91 8619109683. You can also fill the price quote form at the top of this page.": "अपनी ज़रूरत व्हाट्सऐप पर +91 9309318742 पर भेजें या +91 8619109683 पर कॉल करें। आप इस पेज के ऊपर दिया कीमत वाला फ़ॉर्म भी भर सकते हैं।",
             "Industrial & commercial Reverse-Osmosis plants from": "इंडस्ट्रियल और कमर्शियल आरओ प्लांट,",
             "250 to 2000 LPH": "250 से 2000 LPH तक",
             "- plus water chillers, Water ATMs, dosing systems and genuine spares, installed and serviced across Rajasthan & India.": "- साथ में वाटर चिलर, वाटर ATM, डोज़िंग सिस्टम और असली स्पेयर पार्ट्स। पूरे राजस्थान और भारत में इंस्टॉलेशन और सर्विस।",
@@ -1251,16 +1335,16 @@
             "Describe your LPH capacity or service request…": "अपनी LPH क्षमता या सर्विस की ज़रूरत लिखें…"
         };
         const HI_H1 = '<span>शुद्धता,</span><br><span style="color:var(--mint)">हर</span> <span style="color:var(--mint)">बूँद</span> <span style="color:var(--mint)">में।</span>';
-        const TITLE = { en: document.title, hi: "जलसुधा एंटरप्राइज़ेज़ | शुद्ध जल, स्वस्थ जीवन" };
+        const TITLE = { en: document.title, hi: "प्रतापगढ़, राजस्थान में आरओ प्लांट | जलसुधा एंटरप्राइज़ेज़" };
 
-        const btn = document.getElementById('langBtn'), h1 = document.querySelector('h1.headline');
+        const btn = document.getElementById('langBtn'), h1 = document.querySelector('.headline');
         const h1En = h1 ? h1.innerHTML : '';
         let lang = 'en';
 
         function textNodes(){
             const out = [], w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => {
                 const p = n.parentElement;
-                if(!p || /^(SCRIPT|STYLE)$/.test(p.tagName) || p.closest('[data-noi18n], #cur, h1.headline')) return NodeFilter.FILTER_REJECT;
+                if(!p || /^(SCRIPT|STYLE)$/.test(p.tagName) || p.closest('[data-noi18n], #cur, .headline')) return NodeFilter.FILTER_REJECT;
                 return n.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
             }});
             let n; while((n = w.nextNode())) out.push(n);
