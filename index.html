@@ -133,9 +133,11 @@
         /* ---------- Wave dividers ---------- */
         .wave-d{ line-height:0; position:relative; }
         .wave-d svg{ display:block; width:100%; height:70px; }
-        .wave-flow use:nth-child(1){ animation:wm 10s linear infinite; }
-        .wave-flow use:nth-child(2){ animation:wm 15s linear infinite; opacity:.55; }
-        @keyframes wm{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+        /* each layer moves as one piece (both copies together) by exactly one wave
+           period (720 of the 1440 viewBox units), so the loop is seamless */
+        .wave-flow{ animation:wm 10s linear infinite; }
+        .wave-flow.back{ animation-duration:15s; }
+        @keyframes wm{ from{ transform:translateX(0);} to{ transform:translateX(-720px);} }
 
         /* ---------- RO Flow pipeline ---------- */
         .pipe{ position:relative; height:6px; border-radius:99px; background:rgba(94,234,212,.18); overflow:hidden; flex:1; min-width:26px; }
@@ -391,7 +393,7 @@
         <div class="wave-d absolute bottom-[-1px] left-0 w-full">
             <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <defs><path id="w" d="M0,35 C240,70 480,0 720,35 C960,70 1200,0 1440,35 L1440,70 L0,70 Z"/></defs>
-                <g class="wave-flow"><use href="#w" x="0" fill="#eef8fb" opacity=".5"/><use href="#w" x="1440" fill="#eef8fb" opacity=".5"/></g>
+                <g class="wave-flow back"><use href="#w" x="0" fill="#eef8fb" opacity=".5"/><use href="#w" x="1440" fill="#eef8fb" opacity=".5"/></g>
                 <g class="wave-flow"><use href="#w" x="0" fill="#eef8fb"/><use href="#w" x="1440" fill="#eef8fb"/></g>
             </svg>
         </div>
