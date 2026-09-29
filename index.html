@@ -306,6 +306,9 @@
         .snow{ transform-box:fill-box; transform-origin:center; }
         .running .snow{ animation:rotorSpin 6s linear infinite; animation-delay:3s; }
 
+        /* running plant pauses its animations while scrolled out of view (saves battery on phones) */
+        .plant.offscreen *{ animation-play-state:paused !important; }
+
         /* steps light up as the water reaches them */
         .plant-steps{ display:grid; gap:10px; margin-top:18px; }
         @media (min-width:640px){ .plant-steps{ grid-template-columns:1fr 1fr; } }
@@ -1231,6 +1234,7 @@
                 (function step(now){ const p=Math.min(1,(now-s)/dur); scroller.scrollLeft=max*(p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2); if(p<1) glide=requestAnimationFrame(step); })(s);
             }
             scroller.addEventListener('touchstart', ()=>cancelAnimationFrame(glide), {passive:true});
+            if('IntersectionObserver' in window) new IntersectionObserver(es=>es.forEach(en=>plant.classList.toggle('offscreen', !en.isIntersecting))).observe(plant);
             btn.addEventListener('click', ()=>{ const on=!plant.classList.contains('running'); set(on); if(on) follow(); else cancelAnimationFrame(glide); });
         })();
 
