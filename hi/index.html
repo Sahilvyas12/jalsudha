@@ -1183,9 +1183,12 @@
         function saveLead(form, fields){
             if(!LEAD_KEY || form.querySelector('[name="_honey"]').value) return;   // no key yet / bots fill the hidden field
             try{
-                fetch('https://api.web3forms.com/submit', { method:'POST', keepalive:true, headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
-                    body: JSON.stringify(Object.assign({ access_key:LEAD_KEY, subject:'New website enquiry - Jalsudha', from_name:'Jalsudha website',
-                        Page: location.href, Language: document.documentElement.lang }, fields)) }).catch(()=>{});
+                // plain form data (a "simple" request, like a normal HTML form) so it isn't blocked by extra CORS checks
+                const data = new FormData();
+                const all = Object.assign({ access_key:LEAD_KEY, subject:'New website enquiry - Jalsudha', from_name:'Jalsudha website',
+                    Page: location.href, Language: document.documentElement.lang }, fields);
+                Object.keys(all).forEach(k => data.append(k, all[k]));
+                fetch('https://api.web3forms.com/submit', { method:'POST', keepalive:true, body:data }).catch(()=>{});
             }catch(e){}
         }        function sendToWhatsApp(lines){
             const url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
