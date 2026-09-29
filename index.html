@@ -672,7 +672,7 @@
                 <div class="plant-scroll">
                 <svg class="plant-svg" viewBox="0 96 1200 370" role="img" aria-labelledby="plantTitle plantDesc">
                     <title id="plantTitle">Jalsudha RO plant diagram</title>
-                    <desc id="plantDesc">Borewell water flows from the raw water tank through sediment and carbon pre-filters, a high-pressure pump and RO membranes in FRP vessels. Salty reject water goes to the drain, and pure water goes to the storage tank, the chiller and the tap.</desc>
+                    <desc id="plantDesc">Borewell water flows from the raw water tank through sediment and carbon pre-filters, a high-pressure pump and RO membranes in FRP vessels. Salty reject water goes out separately to the garden or an unused borewell, and pure water goes to the storage tank, the chiller and the tap.</desc>
                     <defs>
                         <linearGradient id="gSteel" x1="0" x2="1"><stop offset="0" stop-color="#8fa3ad"/><stop offset=".45" stop-color="#e6edf0"/><stop offset="1" stop-color="#7c8f99"/></linearGradient>
                         <linearGradient id="gFrp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f7f8"/><stop offset=".55" stop-color="#cfd9dd"/><stop offset="1" stop-color="#9fb0b7"/></linearGradient>
@@ -697,7 +697,7 @@
                         <path class="pipe-body" d="M310 340 H400"/>
                         <path class="pipe-body" d="M432 214 V168 H552"/>
                         <path class="pipe-body" d="M790 150 H850 V252 H884"/>
-                        <path class="pipe-body" d="M790 204 H820 V372 H858"/>
+                        <path class="pipe-body" d="M790 204 H835 V398"/>
                         <path class="pipe-body" d="M986 350 H1022"/>
                         <path class="pipe-body" d="M1110 330 H1138 V262 H1165 V268"/>
 
@@ -706,7 +706,7 @@
                         <path class="water w-mid" style="--d:.9s" d="M310 340 H400"/>
                         <path class="water w-mid w-fast" style="--d:1.5s" d="M432 214 V168 H552"/>
                         <path class="water w-pure" style="--d:2.2s" d="M790 150 H850 V252 H884"/>
-                        <path class="water w-reject" style="--d:2.2s" d="M790 204 H820 V372 H858"/>
+                        <path class="water w-reject" style="--d:2.2s" d="M790 204 H835 V398"/>
                         <path class="water w-pure" style="--d:3s" d="M986 350 H1022"/>
                         <path class="water w-pure" style="--d:3.5s" d="M1110 330 H1138 V262 H1165 V268"/>
                     </g>
@@ -778,13 +778,19 @@
                         <g class="ppm-tag"><rect x="812" y="118" width="76" height="24" rx="12" fill="#0e7490"/><text x="850" y="135" text-anchor="middle" class="tag-t">~75 ppm</text></g>
                     </g>
 
-                    <!-- reject line to drain -->
+                    <!-- reject water goes to an unused old borewell / the garden, never to the pure water tank -->
                     <g>
-                        <rect x="852" y="366" width="34" height="12" rx="3" fill="#2b3740"/>
-                        <g stroke="#56707c" stroke-width="2"><path d="M858 368 V376"/><path d="M866 368 V376"/><path d="M874 368 V376"/><path d="M882 368 V376"/></g>
-                        <text x="790" y="428" text-anchor="middle" class="lbl">Reject water</text><text x="790" y="447" text-anchor="middle" class="sub">Reject water to drain</text>
+                        <rect x="814" y="404" width="58" height="62" rx="6" fill="#3a2a17" opacity=".75"/>
+                        <g fill="#5a4326"><circle cx="822" cy="420" r="2"/><circle cx="862" cy="436" r="2.4"/><circle cx="826" cy="452" r="1.8"/><circle cx="858" cy="416" r="1.6"/></g>
+                        <rect x="826" y="392" width="18" height="10" rx="2" fill="#6b7f89"/>
+                        <rect x="829" y="400" width="12" height="66" fill="#56707c"/>
+                        <path class="water w-reject" style="--d:2.6s" d="M835 402 V466" fill="none" stroke-linecap="round"/>
+                        <!-- small garden plant beside the well -->
+                        <path d="M806 400 V380" stroke="#4d7c0f" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M806 388 q-12 -4 -14 -14 q12 2 14 14 Z" fill="#65a30d"/>
+                        <path d="M806 382 q10 -6 14 -16 q-12 2 -14 16 Z" fill="#84cc16"/>
+                        <path d="M796 400 q10 -8 20 0 Z" fill="#4d7c0f"/>
                     </g>
-
                     <!-- 5. pure water storage tank -->
                     <g>
                         <rect x="880" y="226" width="110" height="174" rx="14" fill="#0b2e3a" stroke="#5fb3cc" stroke-width="2"/>
@@ -816,6 +822,7 @@
                         <text x="261" y="428" text-anchor="middle" class="lbl">Pre-filters</text><text x="261" y="447" text-anchor="middle" class="sub">Sediment + Carbon</text>
                         <text x="440" y="428" text-anchor="middle" class="lbl">HP pump</text><text x="440" y="447" text-anchor="middle" class="sub">High Pressure</text>
                         <text x="671" y="258" text-anchor="middle" class="lbl">RO Membrane</text><text x="671" y="277" text-anchor="middle" class="sub">Removes dissolved salts</text>
+                        <text x="735" y="428" text-anchor="middle" class="lbl">Reject water</text><text x="735" y="447" text-anchor="middle" class="sub">To garden or old borewell</text>
                         <text x="935" y="428" text-anchor="middle" class="lbl">Pure water tank</text>
                         <text x="1066" y="428" text-anchor="middle" class="lbl">Chiller</text><text x="1066" y="447" text-anchor="middle" class="sub">Optional cooling</text>
                         <text x="1150" y="246" text-anchor="middle" class="lbl">Pure Water</text>
@@ -829,7 +836,7 @@
                     <li style="--d:0s"><b>1</b><div><h3>Raw Water</h3><p>Borewell or tanker water, heavy with salts (~1500 ppm).</p></div></li>
                     <li style="--d:.5s"><b>2</b><div><h3>Pre-Filter</h3><p>Sediment and carbon cartridges catch sand, rust and chlorine smell.</p></div></li>
                     <li style="--d:1.2s"><b>3</b><div><h3>HP Pump</h3><p>The motor builds high pressure to push water through the membranes.</p></div></li>
-                    <li style="--d:1.9s"><b>4</b><div><h3>RO Membrane</h3><p>Dove / Duken membranes remove dissolved salts; salty reject water goes to the drain.</p></div></li>
+                    <li style="--d:1.9s"><b>4</b><div><h3>RO Membrane</h3><p>Dove / Duken membranes remove dissolved salts; salty reject water goes out separately to the garden or an unused borewell.</p></div></li>
                     <li style="--d:2.6s"><b>5</b><div><h3>Pure water tank</h3><p>Clean water is stored and can be cooled in the chiller.</p></div></li>
                     <li style="--d:3.4s"><b>6</b><div><h3>Pure Water</h3><p>Safe, sweet drinking water at the tap (~75 ppm).</p></div></li>
                 </ol>
@@ -1516,20 +1523,20 @@
             "Running": "चल रहा है",
             "Press start to see how it works": "देखें कैसे काम करता है, चालू करें दबाएँ",
             "Jalsudha RO plant diagram": "जलसुधा आरओ प्लांट का चित्र",
-            "Borewell water flows from the raw water tank through sediment and carbon pre-filters, a high-pressure pump and RO membranes in FRP vessels. Salty reject water goes to the drain, and pure water goes to the storage tank, the chiller and the tap.": "बोरवेल का पानी कच्चे पानी की टंकी से सेडिमेंट और कार्बन प्री-फ़िल्टर, हाई-प्रेशर पंप और FRP वेसल में लगी आरओ मेम्ब्रेन से गुज़रता है। खारा रिजेक्ट पानी नाली में जाता है और शुद्ध पानी स्टोरेज टंकी, चिलर और नल तक पहुँचता है।",
+            "Borewell water flows from the raw water tank through sediment and carbon pre-filters, a high-pressure pump and RO membranes in FRP vessels. Salty reject water goes out separately to the garden or an unused borewell, and pure water goes to the storage tank, the chiller and the tap.": "बोरवेल का पानी कच्चे पानी की टंकी से सेडिमेंट और कार्बन प्री-फ़िल्टर, हाई-प्रेशर पंप और FRP वेसल में लगी आरओ मेम्ब्रेन से गुज़रता है। खारा रिजेक्ट पानी अलग पाइप से बगीचे या बंद पड़े बोरवेल में जाता है और शुद्ध पानी स्टोरेज टंकी, चिलर और नल तक पहुँचता है।",
             "Raw water tank": "कच्चे पानी की टंकी",
             "Borewell, high TDS": "बोरवेल, ज़्यादा TDS",
             "Pre-filters": "प्री-फ़िल्टर",
             "Dove / Duken membranes · FRP vessels": "Dove / Duken मेम्ब्रेन · FRP वेसल",
             "Removes dissolved salts": "घुले हुए नमक हटाती है",
-            "Reject water to drain": "रिजेक्ट पानी नाली में",
+            "To garden or old borewell": "बगीचे या पुराने बोरवेल में",
             "Reject water": "रिजेक्ट पानी",
             "HP pump": "HP पंप",
             "Pure water tank": "शुद्ध पानी की टंकी",
             "Borewell or tanker water, heavy with salts (~1500 ppm).": "बोरवेल या टैंकर का पानी, जिसमें नमक ज़्यादा है (~1500 ppm)।",
             "Sediment and carbon cartridges catch sand, rust and chlorine smell.": "सेडिमेंट और कार्बन कार्ट्रिज रेत, जंग और क्लोरीन की गंध रोकते हैं।",
             "The motor builds high pressure to push water through the membranes.": "मोटर तेज़ प्रेशर बनाती है ताकि पानी मेम्ब्रेन से गुज़र सके।",
-            "Dove / Duken membranes remove dissolved salts; salty reject water goes to the drain.": "Dove / Duken मेम्ब्रेन घुले हुए नमक हटाती हैं; खारा रिजेक्ट पानी नाली में जाता है।",
+            "Dove / Duken membranes remove dissolved salts; salty reject water goes out separately to the garden or an unused borewell.": "Dove / Duken मेम्ब्रेन घुले हुए नमक हटाती हैं; खारा रिजेक्ट पानी अलग पाइप से बगीचे या बंद पड़े बोरवेल में जाता है।",
             "Clean water is stored and can be cooled in the chiller.": "साफ़ पानी टंकी में जमा होता है और चिलर में ठंडा किया जा सकता है।",
             "Safe, sweet drinking water at the tap (~75 ppm).": "नल पर सुरक्षित, मीठा पीने का पानी (~75 ppm)।",
             "Interactive tool": "इंटरैक्टिव टूल",
