@@ -10,6 +10,17 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#04212e">
+    <meta name="description" content="Industrial & commercial RO plants from 250 to 2000 LPH, water chillers, Water ATMs, spares and 24/7 RO repair. Pratapgarh, Rajasthan. Call +91 8619109683.">
+    <!-- link preview on WhatsApp / Facebook / Google -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jalsudha Enterprises">
+    <meta property="og:title" content="Jalsudha Enterprises | RO Plants in Pratapgarh, Rajasthan">
+    <meta property="og:description" content="Industrial & commercial RO plants from 250 to 2000 LPH, chillers, Water ATMs and 24/7 repair. Get a price on WhatsApp.">
+    <meta property="og:url" content="https://sahilvyas12.github.io/jalsudha/">
+    <meta property="og:image" content="https://sahilvyas12.github.io/jalsudha/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -226,6 +237,46 @@
         .cur-drop::after{ content:''; position:absolute; left:6px; top:5px; width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,.85); }
         .cur-fx{ border-radius:50%; }
 
+        /* ---------- Mobile (most customers visit on a phone) ----------
+           !important because the Tailwind CDN injects its styles after this block */
+        .mbar{ display:none; }
+        @media (max-width:767px){
+            /* bottom Call + WhatsApp bar instead of a floating button that covers content */
+            .mbar{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1fr 1fr; gap:8px;
+                padding:8px 12px calc(8px + env(safe-area-inset-bottom)); background:rgba(255,255,255,.97);
+                border-top:1px solid var(--line); box-shadow:0 -10px 30px -18px rgba(4,33,46,.45); }
+            .mbar a{ display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:12px;
+                font-weight:700; font-size:15px; color:#fff; }
+            .mbar i{ font-size:18px; }
+            .mbar-call{ background:var(--aqua-deep); }
+            .mbar-wa{ background:#16a34a; }
+            body{ padding-bottom:72px; }
+            .float-btn{ display:none !important; }
+
+            /* 16px fields stop iPhones zooming the page when a field is tapped */
+            input, select, textarea{ font-size:16px !important; }
+
+            /* compact top bar + header */
+            .tb-left{ display:none !important; }
+            #hdr > div{ height:64px !important; }
+            #hdr img{ height:48px !important; }
+            #mBtn{ width:44px; height:44px; display:flex; align-items:center; justify-content:center; }
+
+            /* full-width, thumb-friendly buttons */
+            .hero-ctas > a, .svc-ctas > a{ flex:1 1 100%; justify-content:center; }
+            .inq{ padding:12px 0; margin:-12px 0; font-size:14px !important; }
+
+            /* accessories: two per row instead of one tall card per screen */
+            .acc-grid{ grid-template-columns:1fr 1fr !important; gap:12px !important; }
+            .acc-grid > div{ padding:10px !important; }
+            .acc-grid > div > div:first-child{ height:84px !important; margin-bottom:8px !important; }
+            .acc-grid h4{ font-size:13px !important; line-height:1.25; }
+            .acc-grid p{ font-size:12px !important; line-height:1.35; }
+
+            /* nothing smaller than 11px */
+            .chip, .eyebrow, .text-\[10px\], .text-\[11px\]{ font-size:11px !important; }
+        }
+
         @media (prefers-reduced-motion: reduce){
             *{ animation:none !important; transition:none !important; }
             .reveal{ opacity:1 !important; transform:none !important; }
@@ -251,7 +302,7 @@
     <!-- Top Bar -->
     <div class="text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-white/5" style="background:var(--ink);">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-6">
+            <div class="tb-left flex items-center gap-6">
                 <span class="cursor-default"><i class="fa-solid fa-location-dot mr-2" style="color:var(--mint)"></i>Pratapgarh, Rajasthan</span>
                 <a href="mailto:jalsudhaptg@gmail.com" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope mr-2" style="color:var(--mint)"></i>jalsudhaptg@gmail.com</a>
             </div>
@@ -331,7 +382,7 @@
                     <span>PIPING <b>Vectus / Astral</b></span>
                 </div>
 
-                <div class="flex flex-wrap items-center gap-4 mt-9">
+                <div class="hero-ctas flex flex-wrap items-center gap-4 mt-9">
                     <a href="#products" class="btn-liquid rhost px-7 py-3.5 rounded-xl bg-white text-cyan-900 font-bold hover:shadow-2xl transition-all duration-300 text-sm flex items-center gap-2 group">
                         Explore RO Plants <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
@@ -597,7 +648,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-100 mt-4 flex justify-between items-center">
                         <span class="font-mono text-xs font-semibold text-slate-700">200–500 LPH</span>
-                        <a href="https://wa.me/919309318742?text=Inquiry%20about%20250%20LPH%20RO%20System" target="_blank" class="text-cyan-700 font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="https://wa.me/919309318742?text=Inquiry%20about%20250%20LPH%20RO%20System" target="_blank" class="text-cyan-700 inq font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
                     </div>
                 </div>
                 <!-- 500 -->
@@ -616,7 +667,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-100 mt-4 flex justify-between items-center">
                         <span class="font-mono text-xs font-semibold text-slate-700">500 L/hr</span>
-                        <a href="https://wa.me/919309318742?text=Inquiry%20about%20500%20LPH%20RO%20System" target="_blank" class="text-cyan-700 font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="https://wa.me/919309318742?text=Inquiry%20about%20500%20LPH%20RO%20System" target="_blank" class="text-cyan-700 inq font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
                     </div>
                 </div>
                 <!-- 1000 -->
@@ -634,7 +685,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-100 mt-4 flex justify-between items-center">
                         <span class="font-mono text-xs font-semibold text-slate-700">1000 L/hr</span>
-                        <a href="https://wa.me/919309318742?text=Inquiry%20about%201000%20LPH%20RO%20Plant" target="_blank" class="text-cyan-700 font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="https://wa.me/919309318742?text=Inquiry%20about%201000%20LPH%20RO%20Plant" target="_blank" class="text-cyan-700 inq font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
                     </div>
                 </div>
                 <!-- 2000 -->
@@ -652,7 +703,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-100 mt-4 flex justify-between items-center">
                         <span class="font-mono text-xs font-semibold text-slate-700">2000 L/hr</span>
-                        <a href="https://wa.me/919309318742?text=Inquiry%20about%202000%20LPH%20RO%20Plant" target="_blank" class="text-emerald-700 font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        <a href="https://wa.me/919309318742?text=Inquiry%20about%202000%20LPH%20RO%20Plant" target="_blank" class="text-emerald-700 inq font-bold text-xs flex items-center gap-1 group-hover:translate-x-1 transition-transform">Inquire <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
                     </div>
                 </div>
             </div>
@@ -665,7 +716,7 @@
                     <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white mt-1">Everything around the plant</h3>
                     <p class="text-sm text-cyan-100/70 mt-2">Heavy-duty chillers, Water ATMs, RFID smart cards, keyfobs, membranes &amp; dosing pumps.</p>
                 </div>
-                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 relative z-10">
+                <div class="acc-grid grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 relative z-10">
                     <div class="rounded-2xl border border-white/10 p-5 text-center hover:-translate-y-1.5 transition-all group" style="background:rgba(255,255,255,.03)">
                         <div class="w-full h-32 rounded-xl mb-3 flex items-center justify-center text-4xl group-hover:scale-110 transition-all" style="background:rgba(94,234,212,.06);color:var(--mint)"><i class="fa-solid fa-snowflake"></i></div>
                         <h4 class="font-bold text-sm text-white">Industrial Water Chiller</h4><p class="text-xs text-cyan-100/60 mt-1">Rapid cooling for purified drinking water.</p>
@@ -703,7 +754,7 @@
                     <span class="eyebrow text-[11px] font-bold text-[var(--aqua-deep)]">Maintenance · Servicing · AMC</span>
                     <h2 class="font-display text-3xl font-extrabold text-slate-900">RO repair &amp; technical support</h2>
                     <p class="text-slate-600 text-sm leading-relaxed">Low flow, high TDS, or pump noise? Our certified technicians handle on-site repairs, filter changes, chemical cleaning and Annual Maintenance Contracts across Rajasthan, Madhya Pradesh and all over India.</p>
-                    <div class="flex flex-wrap gap-4 pt-2">
+                    <div class="svc-ctas flex flex-wrap gap-4 pt-2">
                         <a href="tel:+918619109683" class="btn-liquid rhost px-6 py-3 rounded-xl text-white font-bold text-sm shadow-md flex items-center gap-2" style="background:var(--aqua-deep)"><i class="fa-solid fa-headset"></i> Service hotline: 8619109683</a>
                         <a href="https://wa.me/919309318742?text=Hi,%20I%20need%20repair/servicing%20support%20for%20my%20RO%20plant." target="_blank" class="btn-liquid rhost px-6 py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-md flex items-center gap-2"><i class="fa-brands fa-whatsapp text-lg"></i> Book repair on WhatsApp</a>
                     </div>
@@ -764,10 +815,19 @@
 
     <a href="https://wa.me/919309318742?text=Hi%20Jalsudha%20Enterprises,%20I%20am%20interested%20in%20your%20water%20purification%20solutions." target="_blank" class="float-btn fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-2xl flex items-center justify-center shadow-xl transition-colors" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
+    <!-- Mobile: always-visible Call + WhatsApp bar (replaces the floating button on phones) -->
+    <nav class="mbar" aria-label="Quick contact">
+        <a href="tel:+918619109683" class="mbar-call"><i class="fa-solid fa-phone"></i>Call now</a>
+        <a href="https://wa.me/919309318742?text=Hi%20Jalsudha%20Enterprises,%20I%20am%20interested%20in%20your%20water%20purification%20solutions." target="_blank" class="mbar-wa"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+    </nav>
+
     <script>
         // preloader — hold long enough for the logo reveal to play, then fade
-        window.addEventListener('load', ()=> setTimeout(()=>document.getElementById('preloader').classList.add('gone'), 1750));
-        setTimeout(()=>document.getElementById('preloader').classList.add('gone'), 4200);
+        // Don't wait for every image to download (slow on mobile data): hide once the page
+        // is readable and the logo reveal has played, with a hard cap for slow networks.
+        const hidePreloader=()=>document.getElementById('preloader').classList.add('gone');
+        document.addEventListener('DOMContentLoaded', ()=> setTimeout(hidePreloader, 1100));
+        setTimeout(hidePreloader, 2500);
 
         // mobile menu
         mBtn.addEventListener('click', ()=> mMenu.classList.toggle('hidden'));
