@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -180,7 +180,7 @@
             border:1px solid rgba(255,255,255,.16); animation:up linear infinite; }
         @keyframes up{ 0%{ transform:translateY(0) scale(.7); opacity:0;} 12%{opacity:.7;} 100%{ transform:translateY(-118vh) translateX(24px) scale(1.1); opacity:0;} }
 
-        /* reveal — begins visible-friendly; JS enhances */
+        /* reveal - begins visible-friendly; JS enhances */
         .reveal{ opacity:0; transform:translateY(30px); transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
         .reveal.in{ opacity:1; transform:none; }
         .d1{ transition-delay:.08s;} .d2{ transition-delay:.16s;} .d3{ transition-delay:.24s;} .d4{ transition-delay:.32s;}
@@ -236,6 +236,19 @@
             background:radial-gradient(circle at 62% 62%, var(--c2), var(--c1) 70%); box-shadow:0 2px 10px -1px var(--c1); }
         .cur-drop::after{ content:''; position:absolute; left:6px; top:5px; width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,.85); }
         .cur-fx{ border-radius:50%; }
+
+        /* ---------- Language switch + Hindi typography ---------- */
+        .lang-btn{ height:40px; padding:0 14px; border-radius:12px; border:1.5px solid var(--line); background:#fff;
+            color:var(--aqua-deep); font:700 15px/1 'Mukta','Plus Jakarta Sans',sans-serif; cursor:pointer; transition:background .2s, border-color .2s; }
+        .lang-btn:hover{ background:#ecfeff; border-color:var(--aqua); }
+        .lang-btn:focus-visible{ outline:3px solid var(--aqua); outline-offset:2px; }
+        /* Devanagari needs its own font, no letter-spacing (it breaks joined letters) and taller lines */
+        html[lang="hi"] body, html[lang="hi"] .font-display, html[lang="hi"] .font-mono, html[lang="hi"] .eyebrow,
+        html[lang="hi"] .chip, html[lang="hi"] .spec-strip, html[lang="hi"] .pl-txt, html[lang="hi"] input,
+        html[lang="hi"] select, html[lang="hi"] textarea, html[lang="hi"] button{ font-family:'Mukta','Plus Jakarta Sans',sans-serif; }
+        html[lang="hi"] *{ letter-spacing:0 !important; }
+        html[lang="hi"] h1, html[lang="hi"] h2, html[lang="hi"] h3{ line-height:1.3 !important; }
+        html[lang="hi"] p, html[lang="hi"] li{ line-height:1.75; }
 
         /* ---------- Mobile (most customers visit on a phone) ----------
            !important because the Tailwind CDN injects its styles after this block */
@@ -329,6 +342,8 @@
                 <a href="#services" class="navlink hover:text-cyan-700 transition-colors">Service & AMC</a>
                 <a href="#contact" class="navlink hover:text-cyan-700 transition-colors">Contact</a>
             </nav>
+            <div class="flex items-center gap-2 lg:gap-3 shrink-0">
+            <button id="langBtn" type="button" class="lang-btn" data-noi18n aria-label="हिंदी में देखें (View in Hindi)">हिंदी</button>
             <div class="hidden lg:flex items-center gap-3 shrink-0">
                 <a href="https://wa.me/919309318742?text=Hi%20Jalsudha%20Enterprises,%20I%20am%20interested%20in%20your%20water%20purification%20solutions." target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-50 text-emerald-700 hover:bg-emerald-600 hover:text-white font-semibold text-sm transition-all duration-300 flex items-center gap-2 border border-emerald-200 group">
                     <i class="fa-brands fa-whatsapp text-lg group-hover:scale-110 transition-transform"></i><span>WhatsApp</span>
@@ -336,6 +351,7 @@
                 <a href="#contact" class="btn-liquid rhost px-5 py-2.5 rounded-xl text-white font-semibold text-sm transition-all duration-300 shadow-md" style="background:var(--aqua-deep);">Get Free Quote</a>
             </div>
             <button id="mBtn" class="lg:hidden text-2xl" style="color:var(--text)"><i class="fa-solid fa-bars"></i></button>
+            </div>
         </div>
     </header>
     <div id="mMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-1 shadow-inner">
@@ -371,7 +387,7 @@
                     <span style="animation-delay:.56s;color:var(--mint)">drop.</span>
                 </h1>
                 <p class="mt-5 text-cyan-50/90 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                    Industrial &amp; commercial Reverse-Osmosis plants from <strong class="font-semibold text-white">250 to 2000 LPH</strong> — plus water chillers, Water ATMs, dosing systems and genuine spares, installed and serviced across Rajasthan &amp; India.
+                    Industrial &amp; commercial Reverse-Osmosis plants from <strong class="font-semibold text-white">250 to 2000 LPH</strong> - plus water chillers, Water ATMs, dosing systems and genuine spares, installed and serviced across Rajasthan &amp; India.
                 </p>
 
                 <!-- mono spec ticker -->
@@ -399,7 +415,7 @@
                 </div>
                 <!-- stats strip -->
                 <div class="hero-stats glass rounded-2xl mt-6 py-4 max-w-xl">
-                    <div class="flex-1 px-5"><div class="font-display text-2xl sm:text-3xl font-extrabold"><span class="counter" data-target="300">0</span>+</div><div class="text-[11px] text-cyan-200/80 mt-0.5">Installations</div></div>
+                    <div class="flex-1 px-5"><div class="font-display text-2xl sm:text-3xl font-extrabold"><span class="counter" data-target="50">0</span>+</div><div class="text-[11px] text-cyan-200/80 mt-0.5">Installations</div></div>
                     <div class="flex-1 px-5"><div class="font-display text-2xl sm:text-3xl font-extrabold"><span class="counter" data-target="7">0</span>+</div><div class="text-[11px] text-cyan-200/80 mt-0.5">Years in service</div></div>
                     <div class="flex-1 px-5"><div class="font-mono text-lg sm:text-xl font-bold mt-1.5">250–2000</div><div class="text-[11px] text-cyan-200/80 mt-0.5">LPH capacity</div></div>
                 </div>
@@ -480,10 +496,10 @@
                 <span class="eyebrow text-[11px] font-bold text-[var(--aqua-deep)]">About Jalsudha Enterprises</span>
                 <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 leading-snug">Pure drinking water, engineered for Rajasthan's toughest water.</h2>
                 <p class="text-slate-600 leading-relaxed text-sm sm:text-base mt-5">
-                    Founded in Pratapgarh, <strong>Jalsudha Enterprises</strong> designs, installs and services commercial water-filtration plants, industrial RO systems, water chillers, softeners, Water ATMs and domestic purifiers — built for high-TDS borewell water.
+                    Founded in Pratapgarh, <strong>Jalsudha Enterprises</strong> designs, installs and services commercial water-filtration plants, industrial RO systems, water chillers, softeners, Water ATMs and domestic purifiers - built for high-TDS borewell water.
                 </p>
                 <p class="text-slate-600 leading-relaxed text-sm mt-4">
-                    From food plants and pharma labs to schools, hotels and homes, we deliver customised treatment lines — with optional automatic PLC control — that cut TDS, strip heavy minerals, and pour crisp, cooled water on demand.
+                    From food plants and pharma labs to schools, hotels and homes, we deliver customised treatment lines - with optional automatic PLC control - that cut TDS, strip heavy minerals, and pour crisp, cooled water on demand.
                 </p>
                 <div class="grid sm:grid-cols-2 gap-4 mt-7">
                     <div class="p-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] hover:border-cyan-300 transition-all flex items-start gap-3.5 group">
@@ -530,14 +546,14 @@
             <div class="text-center max-w-2xl mx-auto reveal">
                 <span class="eyebrow text-[11px] font-bold" style="color:var(--mint)">Inside every Jalsudha plant</span>
                 <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white mt-3">How your water is purified</h2>
-                <p class="text-cyan-100/70 text-sm mt-3">Watch raw high-TDS borewell water travel the line — sediment to sip — and drop from <span class="font-mono text-white">~1500&nbsp;ppm</span> to a safe <span class="font-mono" style="color:var(--mint)">~45&nbsp;ppm</span>.</p>
+                <p class="text-cyan-100/70 text-sm mt-3">Watch raw high-TDS borewell water travel the line - sediment to sip - and drop from <span class="font-mono text-white">~1500&nbsp;ppm</span> to a safe <span class="font-mono" style="color:var(--mint)">~75&nbsp;ppm</span>.</p>
             </div>
 
             <!-- live TDS readout -->
             <div class="flex justify-center mt-9 reveal d1">
                 <div class="glass rounded-2xl px-7 py-4 flex items-center gap-5">
                     <span class="eyebrow text-[10px] text-cyan-100/70">Live TDS</span>
-                    <span id="tds" class="font-mono text-4xl font-bold text-white" data-from="1500" data-to="45">1500</span>
+                    <span id="tds" class="font-mono text-4xl font-bold text-white" data-from="1500" data-to="75">1500</span>
                     <span class="font-mono text-sm text-cyan-100/60">ppm</span>
                 </div>
             </div>
@@ -572,7 +588,7 @@
                     <div class="flex items-center pb-9 shrink-0 w-6 md:w-auto md:flex-1"><div class="pipe"></div></div>
                     <div class="stage snap-center shrink-0 w-[108px] md:w-auto md:flex-1 flex flex-col items-center text-center gap-3">
                         <div class="stage-ic" style="border-color:rgba(94,234,212,.6);box-shadow:0 0 30px rgba(94,234,212,.5)"><i class="fa-solid fa-glass-water"></i></div>
-                        <div><div class="text-white font-semibold text-sm">Pure Water</div><div class="chip mt-0.5" style="color:var(--mint)">~45 ppm</div></div>
+                        <div><div class="text-white font-semibold text-sm">Pure Water</div><div class="chip mt-0.5" style="color:var(--mint)">~75 ppm</div></div>
                     </div>
                 </div>
                 <p class="md:hidden text-center chip text-cyan-100/50 mt-2"><i class="fa-solid fa-arrows-left-right mr-1.5"></i>swipe to follow the flow</p>
@@ -586,7 +602,7 @@
             <div class="text-center max-w-2xl mx-auto mb-10 reveal">
                 <span class="eyebrow text-[11px] font-bold text-[var(--aqua-deep)]">Interactive tool</span>
                 <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Which RO plant fits your facility?</h2>
-                <p class="text-sm text-slate-500 mt-2">Pick your daily requirement — we'll recommend the right capacity and membrane count.</p>
+                <p class="text-sm text-slate-500 mt-2">Pick your daily requirement - we'll recommend the right capacity and membrane count.</p>
             </div>
             <div class="bg-white p-8 rounded-3xl shadow-xl border border-[var(--line)] grid md:grid-cols-2 gap-8 items-center reveal d1">
                 <div class="space-y-5">
@@ -783,7 +799,7 @@
                     </div>
                     <p class="text-sm text-cyan-100/70 leading-relaxed">Your trusted partner in water-filtration plants, industrial RO systems, chillers, Water ATMs and repair solutions.</p>
                     <div class="space-y-4 pt-2 text-sm">
-                        <div class="flex items-start gap-3 group"><i class="fa-solid fa-location-dot text-lg mt-1 group-hover:scale-125 transition-transform" style="color:var(--mint)"></i><div><span class="font-bold text-white block">Office</span><span class="text-cyan-100/60">Pratapgarh, Rajasthan, India</span></div></div>
+                        <div class="flex items-start gap-3 group"><i class="fa-solid fa-location-dot text-lg mt-1 group-hover:scale-125 transition-transform" style="color:var(--mint)"></i><div><span class="font-bold text-white block">Office</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Brahmno%20ki%20Pole%2C%20Gopal%20Ganj%2C%20Pratapgarh%2C%20Rajasthan%20312605" target="_blank" rel="noopener" class="text-cyan-100/60 hover:text-white transition-colors">Brahmno ki Pole, Gopal Ganj, Pratapgarh (Raj.) 312605</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Brahmno%20ki%20Pole%2C%20Gopal%20Ganj%2C%20Pratapgarh%2C%20Rajasthan%20312605" target="_blank" rel="noopener" class="map-link mt-2 inline-flex items-center gap-1.5 text-xs font-semibold" style="color:var(--mint)"><i class="fa-solid fa-diamond-turn-right"></i><span>Get directions</span></a></div></div>
                         <div class="flex items-start gap-3 group"><i class="fa-solid fa-phone text-lg mt-1 group-hover:scale-125 transition-transform" style="color:var(--mint)"></i><div><span class="font-bold text-white block">Phone</span><a href="tel:+918619109683" class="text-cyan-100/60 hover:text-white transition-colors font-mono">+91 8619109683</a></div></div>
                         <div class="flex items-start gap-3 group"><i class="fa-solid fa-envelope text-lg mt-1 group-hover:scale-125 transition-transform" style="color:var(--mint)"></i><div><span class="font-bold text-white block">Email</span><a href="mailto:jalsudhaptg@gmail.com" class="text-cyan-100/60 hover:text-white transition-colors">jalsudhaptg@gmail.com</a></div></div>
                     </div>
@@ -806,8 +822,8 @@
             <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-cyan-100/40 gap-4">
                 <p>&copy; 2026 Jalsudha Enterprises. All rights reserved.</p>
                 <div class="flex gap-6">
-                    <a href="https://www.jalsudha.com/privacy" target="_blank" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="https://www.jalsudha.com/terms" target="_blank" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -822,7 +838,7 @@
     </nav>
 
     <script>
-        // preloader — hold long enough for the logo reveal to play, then fade
+        // preloader - hold long enough for the logo reveal to play, then fade
         // Don't wait for every image to download (slow on mobile data): hide once the page
         // is readable and the logo reveal has played, with a hard cap for slow networks.
         const hidePreloader=()=>document.getElementById('preloader').classList.add('gone');
@@ -841,7 +857,7 @@
             '1000':{t:'1000 LPH Industrial RO Plant',d:'4 Dove/Duken membranes (250×4), FRP vessel, Vectus/Astral piping. Semi- or fully-automatic PLC.',f:'1000 L/hr'},
             '2000':{t:'2000 LPH High-Capacity RO Plant',d:'8 Dove/Duken membranes (250×8), FRP vessel, Vectus piping. Optional PLC with auto backwash.',f:'2000 L/hr'}
         };
-        usage.addEventListener('change', e=>{ const d=rec[e.target.value]; if(d){ cTitle.textContent=d.t; cDesc.textContent=d.d; cFlow.textContent=d.f; cTitle.animate([{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'none'}],{duration:400,easing:'cubic-bezier(.16,1,.3,1)'});} });
+        usage.addEventListener('change', e=>{ const d=rec[e.target.value]; if(d){ cTitle.textContent=d.t; cDesc.textContent=d.d; cFlow.textContent=d.f; cTitle.animate([{opacity:0,transform:'translateY(6px)'},{opacity:1,transform:'none'}],{duration:400,easing:'cubic-bezier(.16,1,.3,1)'}); if(window.i18nRefresh) i18nRefresh(); } });
 
         // forms
         // forms -> WhatsApp: open a chat with the visitor's details already typed in
@@ -1020,6 +1036,259 @@
                 requestAnimationFrame(loop);
             })(0);
         })();
+    </script>
+
+    <!-- Business details for Google (address, phone, map) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Jalsudha Enterprises",
+      "description": "Industrial and commercial RO plants (250 to 2000 LPH), water chillers, Water ATMs, spares and RO repair.",
+      "url": "https://sahilvyas12.github.io/jalsudha/",
+      "image": "https://sahilvyas12.github.io/jalsudha/og-image.jpg",
+      "logo": "https://sahilvyas12.github.io/jalsudha/logo.png",
+      "telephone": "+91-8619109683",
+      "email": "jalsudhaptg@gmail.com",
+      "foundingDate": "2019",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Brahmno ki Pole, Gopal Ganj",
+        "addressLocality": "Pratapgarh",
+        "addressRegion": "Rajasthan",
+        "postalCode": "312605",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Rajasthan", "Madhya Pradesh", "India"],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Brahmno%20ki%20Pole%2C%20Gopal%20Ganj%2C%20Pratapgarh%2C%20Rajasthan%20312605"
+    }
+    </script>
+
+    <!-- ===== English / Hindi switch =====
+         Swaps visible text using the table below; English stays in the HTML as the source.
+         Technical terms buyers already use (RO, LPH, TDS, PLC, AMC, ATM, brand names) stay as they are. -->
+    <script>
+    (function(){
+        const HI = {
+            "PURE WATER · PURE LIFE": "शुद्ध जल · स्वस्थ जीवन",
+            "Pratapgarh, Rajasthan": "प्रतापगढ़, राजस्थान",
+            "24/7 RO Emergency Repair Support": "24/7 आरओ इमरजेंसी रिपेयर सपोर्ट",
+            "About": "हमारे बारे में",
+            "How RO Works": "आरओ कैसे काम करता है",
+            "RO Plants": "आरओ प्लांट",
+            "Calculator": "कैलकुलेटर",
+            "Service & AMC": "सर्विस और AMC",
+            "Contact": "संपर्क",
+            "WhatsApp": "व्हाट्सऐप",
+            "Get Free Quote": "फ्री कोटेशन लें",
+            "Call now": "अभी कॉल करें",
+            "EST. 2019 · Pratapgarh, Rajasthan": "स्थापना 2019 · प्रतापगढ़, राजस्थान",
+            "Industrial & commercial Reverse-Osmosis plants from": "इंडस्ट्रियल और कमर्शियल आरओ प्लांट,",
+            "250 to 2000 LPH": "250 से 2000 LPH तक",
+            "- plus water chillers, Water ATMs, dosing systems and genuine spares, installed and serviced across Rajasthan & India.": "- साथ में वाटर चिलर, वाटर ATM, डोज़िंग सिस्टम और असली स्पेयर पार्ट्स। पूरे राजस्थान और भारत में इंस्टॉलेशन और सर्विस।",
+            "MEMBRANES": "मेम्ब्रेन",
+            "RECOVERY": "रिकवरी",
+            "VESSEL": "वेसल",
+            "PIPING": "पाइपिंग",
+            "Explore RO Plants": "आरओ प्लांट देखें",
+            "4.9 client rating": "4.9 ग्राहक रेटिंग",
+            "ISO-grade components": "ISO-ग्रेड पार्ट्स",
+            "Same-day service": "उसी दिन सर्विस",
+            "Installations": "इंस्टॉलेशन",
+            "Years in service": "साल का अनुभव",
+            "LPH capacity": "LPH क्षमता",
+            "15-min callback": "15 मिनट में कॉल-बैक",
+            "Request a price quote": "कीमत जानें",
+            "Instant pricing & technical specs for your requirement.": "आपकी ज़रूरत के हिसाब से तुरंत कीमत और तकनीकी जानकारी।",
+            "Your full name": "आपका पूरा नाम",
+            "Phone number": "फ़ोन नंबर",
+            "Requirement": "ज़रूरत",
+            "250 LPH RO Plant (1 Membrane)": "250 LPH आरओ प्लांट (1 मेम्ब्रेन)",
+            "500 LPH RO Plant (2 Membranes)": "500 LPH आरओ प्लांट (2 मेम्ब्रेन)",
+            "1000 LPH RO Plant (4 Membranes)": "1000 LPH आरओ प्लांट (4 मेम्ब्रेन)",
+            "2000 LPH RO Plant (8 Membranes)": "2000 LPH आरओ प्लांट (8 मेम्ब्रेन)",
+            "Water Chiller": "वाटर चिलर",
+            "Water ATM / Smart Cards & Keyfobs": "वाटर ATM / स्मार्ट कार्ड और कीफ़ोब",
+            "Dosing Pump / RO Chemicals": "डोज़िंग पंप / आरओ केमिकल",
+            "Repair & Service Support": "रिपेयर और सर्विस",
+            "Send inquiry on WhatsApp": "व्हाट्सऐप पर पूछताछ भेजें",
+            "WhatsApp is opening with your details. Press send there, and our team will call you back within 15 minutes.": "आपकी जानकारी के साथ व्हाट्सऐप खुल रहा है। वहाँ Send दबाएँ, हमारी टीम 15 मिनट में आपको कॉल करेगी।",
+            "Trusted across industries in Rajasthan, MP & India": "राजस्थान, मध्य प्रदेश और पूरे भारत के उद्योगों का भरोसा",
+            "Pharma Labs": "फार्मा लैब",
+            "Food Processing": "फ़ूड प्रोसेसिंग",
+            "Hospitals": "अस्पताल",
+            "Schools": "स्कूल",
+            "Hotels": "होटल",
+            "Bottling Plants": "बॉटलिंग प्लांट",
+            "About Jalsudha Enterprises": "जलसुधा एंटरप्राइज़ेज़ के बारे में",
+            "Pure drinking water, engineered for Rajasthan's toughest water.": "राजस्थान के सबसे खारे पानी के लिए बना, शुद्ध पीने का पानी।",
+            "Founded in Pratapgarh,": "प्रतापगढ़ में स्थापित",
+            "Jalsudha Enterprises": "जलसुधा एंटरप्राइज़ेज़",
+            "designs, installs and services commercial water-filtration plants, industrial RO systems, water chillers, softeners, Water ATMs and domestic purifiers - built for high-TDS borewell water.": "कमर्शियल वाटर-फ़िल्ट्रेशन प्लांट, इंडस्ट्रियल आरओ सिस्टम, वाटर चिलर, सॉफ़्टनर, वाटर ATM और घरेलू प्यूरीफ़ायर का डिज़ाइन, इंस्टॉलेशन और सर्विस करता है - ख़ास तौर पर ज़्यादा TDS वाले बोरवेल पानी के लिए।",
+            "From food plants and pharma labs to schools, hotels and homes, we deliver customised treatment lines - with optional automatic PLC control - that cut TDS, strip heavy minerals, and pour crisp, cooled water on demand.": "फ़ूड प्लांट और फार्मा लैब से लेकर स्कूल, होटल और घरों तक, हम आपकी ज़रूरत के हिसाब से ट्रीटमेंट लाइन लगाते हैं (ऑटोमैटिक PLC कंट्रोल के विकल्प के साथ), जो TDS घटाती है, भारी मिनरल हटाती है और ज़रूरत पर ठंडा, साफ़ पानी देती है।",
+            "Optional automation": "ऑटोमेशन (वैकल्पिक)",
+            "Auto PLC panels, auto-flush & level sensors.": "ऑटो PLC पैनल, ऑटो-फ़्लश और लेवल सेंसर।",
+            "Industrial chillers": "इंडस्ट्रियल चिलर",
+            "Rapid cooling for RO lines & Water ATMs.": "आरओ लाइन और वाटर ATM के लिए तेज़ कूलिंग।",
+            "TDS reduction": "TDS में कमी",
+            "Water recovery": "पानी की रिकवरी",
+            "Free on-site TDS testing in Pratapgarh before every membrane selection.": "मेम्ब्रेन चुनने से पहले प्रतापगढ़ में साइट पर मुफ़्त TDS जाँच।",
+            "Inside every Jalsudha plant": "हर जलसुधा प्लांट के अंदर",
+            "How your water is purified": "आपका पानी कैसे साफ़ होता है",
+            "Watch raw high-TDS borewell water travel the line - sediment to sip - and drop from": "देखिए, ज़्यादा TDS वाला बोरवेल का पानी हर चरण से गुज़रकर",
+            "to a safe": "से घटकर सुरक्षित",
+            "Live TDS": "लाइव TDS",
+            "Raw Water": "कच्चा पानी",
+            "Pre-Filter": "प्री-फ़िल्टर",
+            "Sediment + Carbon": "सेडिमेंट + कार्बन",
+            "HP Pump": "HP पंप",
+            "High Pressure": "हाई प्रेशर",
+            "RO Membrane": "आरओ मेम्ब्रेन",
+            "Chiller": "चिलर",
+            "Optional cooling": "कूलिंग (वैकल्पिक)",
+            "Pure Water": "शुद्ध पानी",
+            "swipe to follow the flow": "आगे देखने के लिए स्वाइप करें",
+            "Interactive tool": "इंटरैक्टिव टूल",
+            "Which RO plant fits your facility?": "आपके लिए कौन-सा आरओ प्लांट सही है?",
+            "Pick your daily requirement - we'll recommend the right capacity and membrane count.": "रोज़ की पानी की ज़रूरत चुनें, हम सही क्षमता और मेम्ब्रेन की संख्या बताएँगे।",
+            "Estimated daily water requirement": "रोज़ की अनुमानित पानी की ज़रूरत",
+            "Small Facility / Clinic (1,000 – 2,500 L/day)": "छोटी जगह / क्लिनिक (1,000 – 2,500 लीटर/दिन)",
+            "School / Hotel / Cafe (3,000 – 5,000 L/day)": "स्कूल / होटल / कैफ़े (3,000 – 5,000 लीटर/दिन)",
+            "Medium Factory / Hospital (6,000 – 10,000 L/day)": "मध्यम फ़ैक्ट्री / अस्पताल (6,000 – 10,000 लीटर/दिन)",
+            "Large Plant / Bottling (15,000+ L/day)": "बड़ा प्लांट / बॉटलिंग (15,000+ लीटर/दिन)",
+            "Water source TDS": "पानी का स्रोत (TDS)",
+            "Borewell (High TDS / Hard)": "बोरवेल (ज़्यादा TDS / खारा)",
+            "Municipal Supply (Moderate)": "नगरपालिका सप्लाई (मध्यम)",
+            "Surface / Tanker": "सतही पानी / टैंकर",
+            "Free water TDS testing in Pratapgarh ensures the correct membrane selection.": "प्रतापगढ़ में मुफ़्त TDS जाँच से सही मेम्ब्रेन चुनी जाती है।",
+            "Recommended solution": "हमारा सुझाव",
+            "250 LPH Commercial RO Plant": "250 LPH कमर्शियल आरओ प्लांट",
+            "500 LPH Commercial RO Plant": "500 LPH कमर्शियल आरओ प्लांट",
+            "1000 LPH Industrial RO Plant": "1000 LPH इंडस्ट्रियल आरओ प्लांट",
+            "2000 LPH High-Capacity RO Plant": "2000 LPH हाई-कैपेसिटी आरओ प्लांट",
+            "1 Dove/Duken membrane, FRP vessel, Vectus piping. Optional automatic PLC panel. Max recovery 60–65%.": "1 Dove/Duken मेम्ब्रेन, FRP वेसल, Vectus पाइपिंग। ऑटोमैटिक PLC पैनल का विकल्प। अधिकतम रिकवरी 60–65%।",
+            "2 Dove/Duken membranes, FRP vessel, Vectus piping. Optional auto-flushing timer. Max recovery 60–65%.": "2 Dove/Duken मेम्ब्रेन, FRP वेसल, Vectus पाइपिंग। ऑटो-फ़्लशिंग टाइमर का विकल्प। अधिकतम रिकवरी 60–65%।",
+            "4 Dove/Duken membranes (250×4), FRP vessel, Vectus/Astral piping. Semi- or fully-automatic PLC.": "4 Dove/Duken मेम्ब्रेन (250×4), FRP वेसल, Vectus/Astral पाइपिंग। सेमी या फ़ुली-ऑटोमैटिक PLC।",
+            "4 Dove/Duken membranes (250×4), FRP vessel, Vectus/Astral piping. Optional fully-automatic panel & chiller. Max recovery 60–65%.": "4 Dove/Duken मेम्ब्रेन (250×4), FRP वेसल, Vectus/Astral पाइपिंग। फ़ुली-ऑटोमैटिक पैनल और चिलर का विकल्प। अधिकतम रिकवरी 60–65%।",
+            "8 Dove/Duken membranes (250×8), FRP vessel, Vectus piping. Optional PLC with auto backwash.": "8 Dove/Duken मेम्ब्रेन (250×8), FRP वेसल, Vectus पाइपिंग। ऑटो बैकवॉश के साथ PLC का विकल्प।",
+            "Flow rate": "फ़्लो रेट",
+            "WhatsApp quote": "व्हाट्सऐप पर कोटेशन",
+            "Product catalogue": "प्रोडक्ट कैटलॉग",
+            "High-performance RO systems & accessories": "हाई-परफ़ॉर्मेंस आरओ सिस्टम और एक्सेसरीज़",
+            "Dove/Duken membranes, FRP vessels, 60–65% recovery, and optional automatic controllers.": "Dove/Duken मेम्ब्रेन, FRP वेसल, 60–65% रिकवरी और वैकल्पिक ऑटोमैटिक कंट्रोलर।",
+            "1 Membrane": "1 मेम्ब्रेन",
+            "250 LPH RO Plant": "250 LPH आरओ प्लांट",
+            "500 LPH RO Plant": "500 LPH आरओ प्लांट",
+            "1000 LPH RO Plant": "1000 LPH आरओ प्लांट",
+            "2000 LPH RO Plant": "2000 LPH आरओ प्लांट",
+            "FRP vessel, 60–65% recovery. Optional auto control panel. Ideal for clinics & schools.": "FRP वेसल, 60–65% रिकवरी। ऑटो कंट्रोल पैनल का विकल्प। क्लिनिक और स्कूलों के लिए बढ़िया।",
+            "FRP Vessel": "FRP वेसल",
+            "Auto opt.": "ऑटो विकल्प",
+            "Inquire": "पूछताछ करें",
+            "Popular": "लोकप्रिय",
+            "2 Membranes": "2 मेम्ब्रेन",
+            "2 Dove/Duken membranes, 60–65% recovery, Vectus piping. Optional auto-flush & level sensors.": "2 Dove/Duken मेम्ब्रेन, 60–65% रिकवरी, Vectus पाइपिंग। ऑटो-फ़्लश और लेवल सेंसर का विकल्प।",
+            "Auto flush": "ऑटो फ़्लश",
+            "Heavy-duty commercial plant, 4 membranes, Vectus/Astral piping. Semi- or fully-automatic PLC.": "हेवी-ड्यूटी कमर्शियल प्लांट, 4 मेम्ब्रेन, Vectus/Astral पाइपिंग। सेमी या फ़ुली-ऑटोमैटिक PLC।",
+            "4 Membranes": "4 मेम्ब्रेन",
+            "Auto/Semi": "ऑटो/सेमी",
+            "Max-performance plant, 8 Dove/Duken membranes. Optional PLC with auto backwash & dosing.": "सबसे ज़्यादा क्षमता वाला प्लांट, 8 Dove/Duken मेम्ब्रेन। ऑटो बैकवॉश और डोज़िंग के साथ PLC का विकल्प।",
+            "8 Membranes": "8 मेम्ब्रेन",
+            "Civil avail.": "सिविल वर्क उपलब्ध",
+            "Chillers · ATMs · Spares": "चिलर · ATM · स्पेयर पार्ट्स",
+            "Everything around the plant": "प्लांट से जुड़ा सब कुछ",
+            "Heavy-duty chillers, Water ATMs, RFID smart cards, keyfobs, membranes & dosing pumps.": "हेवी-ड्यूटी चिलर, वाटर ATM, RFID स्मार्ट कार्ड, कीफ़ोब, मेम्ब्रेन और डोज़िंग पंप।",
+            "Industrial Water Chiller": "इंडस्ट्रियल वाटर चिलर",
+            "Rapid cooling for purified drinking water.": "साफ़ पीने के पानी की तेज़ कूलिंग।",
+            "Dosing Pump": "डोज़िंग पंप",
+            "Precision chemical dosing.": "सटीक केमिकल डोज़िंग।",
+            "RO Antiscalant Chemicals": "आरओ एंटीस्केलेंट केमिकल",
+            "Prevents membrane fouling & scaling.": "मेम्ब्रेन को गंदगी और स्केलिंग से बचाता है।",
+            "Quality Membranes": "क्वालिटी मेम्ब्रेन",
+            "High-rejection, 250–2000 LPH.": "हाई-रिजेक्शन, 250–2000 LPH।",
+            "Water ATM Machine": "वाटर ATM मशीन",
+            "Coin & RFID card-operated vending.": "सिक्के और RFID कार्ड से चलने वाली मशीन।",
+            "ATM Cards & Keyfobs": "ATM कार्ड और कीफ़ोब",
+            "Rechargeable RFID smart cards.": "रिचार्ज होने वाले RFID स्मार्ट कार्ड।",
+            "Maintenance · Servicing · AMC": "मेंटेनेंस · सर्विसिंग · AMC",
+            "RO repair & technical support": "आरओ रिपेयर और तकनीकी सहायता",
+            "Low flow, high TDS, or pump noise? Our certified technicians handle on-site repairs, filter changes, chemical cleaning and Annual Maintenance Contracts across Rajasthan, Madhya Pradesh and all over India.": "पानी कम आ रहा है, TDS ज़्यादा है या पंप आवाज़ कर रहा है? हमारे प्रशिक्षित टेक्नीशियन राजस्थान, मध्य प्रदेश और पूरे भारत में साइट पर रिपेयर, फ़िल्टर बदलना, केमिकल क्लीनिंग और सालाना मेंटेनेंस कॉन्ट्रैक्ट (AMC) संभालते हैं।",
+            "Service hotline: 8619109683": "सर्विस हेल्पलाइन: 8619109683",
+            "Book repair on WhatsApp": "व्हाट्सऐप पर रिपेयर बुक करें",
+            "Fast response guarantee": "जल्दी सर्विस की गारंटी",
+            "Same-day technician visits for clients in Pratapgarh & nearby industrial areas.": "प्रतापगढ़ और आसपास के औद्योगिक क्षेत्रों में उसी दिन टेक्नीशियन विज़िट।",
+            "JALSUDHA ENTERPRISES": "जलसुधा एंटरप्राइज़ेज़",
+            "Your trusted partner in water-filtration plants, industrial RO systems, chillers, Water ATMs and repair solutions.": "वाटर-फ़िल्ट्रेशन प्लांट, इंडस्ट्रियल आरओ सिस्टम, चिलर, वाटर ATM और रिपेयर के लिए आपका भरोसेमंद साथी।",
+            "Office": "ऑफ़िस",
+            "Brahmno ki Pole, Gopal Ganj, Pratapgarh (Raj.) 312605": "ब्राह्मणों की पोल, गोपाल गंज, प्रतापगढ़ (राज.) 312605",
+            "Get directions": "रास्ता देखें",
+            "Phone": "फ़ोन",
+            "Email": "ईमेल",
+            "Send us a direct message": "हमें सीधा मैसेज भेजें",
+            "Our technical manager will respond shortly.": "हमारे टेक्निकल मैनेजर जल्द जवाब देंगे।",
+            "Full name": "पूरा नाम",
+            "Mobile number": "मोबाइल नंबर",
+            "Message / requirement": "मैसेज / ज़रूरत",
+            "Send message on WhatsApp": "व्हाट्सऐप पर मैसेज भेजें",
+            "© 2026 Jalsudha Enterprises. All rights reserved.": "© 2026 जलसुधा एंटरप्राइज़ेज़। सर्वाधिकार सुरक्षित।",
+            "Privacy Policy": "प्राइवेसी पॉलिसी",
+            "Terms of Service": "नियम और शर्तें"
+        };
+        // text that only makes sense inside one section
+        const HI_IN = { "#process": { ".": " तक पहुँचता है।" } };
+        const HI_PH = {
+            "e.g. Rahul Sharma": "जैसे: राहुल शर्मा",
+            "e.g. 9876543210": "जैसे: 9876543210",
+            "Describe your LPH capacity or service request…": "अपनी LPH क्षमता या सर्विस की ज़रूरत लिखें…"
+        };
+        const HI_H1 = '<span>शुद्धता,</span><br><span style="color:var(--mint)">हर</span> <span style="color:var(--mint)">बूँद</span> <span style="color:var(--mint)">में।</span>';
+        const TITLE = { en: document.title, hi: "जलसुधा एंटरप्राइज़ेज़ | शुद्ध जल, स्वस्थ जीवन" };
+
+        const btn = document.getElementById('langBtn'), h1 = document.querySelector('h1.headline');
+        const h1En = h1 ? h1.innerHTML : '';
+        let lang = 'en';
+
+        function textNodes(){
+            const out = [], w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => {
+                const p = n.parentElement;
+                if(!p || /^(SCRIPT|STYLE)$/.test(p.tagName) || p.closest('[data-noi18n], #cur, h1.headline')) return NodeFilter.FILTER_REJECT;
+                return n.textContent.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+            }});
+            let n; while((n = w.nextNode())) out.push(n);
+            return out;
+        }
+        function hiFor(node, key){
+            for(const sel in HI_IN){ if(node.parentElement.closest(sel) && HI_IN[sel][key]) return HI_IN[sel][key]; }
+            return HI[key];
+        }
+        function apply(){
+            textNodes().forEach(n => {
+                if(n.__en === undefined) n.__en = n.textContent;
+                const raw = n.__en, key = raw.replace(/\s+/g, ' ').trim();
+                const hi = lang === 'hi' ? hiFor(n, key) : null;
+                const next = hi ? raw.match(/^\s*/)[0] + hi + raw.match(/\s*$/)[0] : raw;
+                if(n.textContent !== next) n.textContent = next;
+            });
+            document.querySelectorAll('[placeholder]').forEach(el => {
+                if(el.dataset.enPh === undefined) el.dataset.enPh = el.placeholder;
+                el.placeholder = (lang === 'hi' && HI_PH[el.dataset.enPh]) || el.dataset.enPh;
+            });
+            if(h1) h1.innerHTML = lang === 'hi' ? HI_H1 : h1En;
+            document.documentElement.lang = lang;
+            document.title = TITLE[lang];
+            btn.textContent = lang === 'hi' ? 'English' : 'हिंदी';
+            btn.setAttribute('aria-label', lang === 'hi' ? 'View in English' : 'हिंदी में देखें (View in Hindi)');
+        }
+        // calculator rewrites its text; re-apply Hindi to the new text
+        window.i18nRefresh = () => { if(lang === 'hi') apply(); };
+
+        btn.addEventListener('click', () => {
+            lang = lang === 'hi' ? 'en' : 'hi';
+            apply();
+            try { localStorage.setItem('jalsudha-lang', lang); } catch(e){}
+        });
+        try { if(localStorage.getItem('jalsudha-lang') === 'hi'){ lang = 'hi'; apply(); } } catch(e){}
+    })();
     </script>
 </body>
 </html>
